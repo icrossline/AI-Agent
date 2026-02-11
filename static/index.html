@@ -1026,6 +1026,496 @@ body::after {
 .priority-badge.medium { color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,170,0,0.2); }
 .priority-badge.low    { color: var(--green); background: var(--green-dim); border: 1px solid rgba(0,255,136,0.2); }
 
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  #app {
+    grid-template-columns: 200px 1fr 240px;
+  }
+  
+  .brand-name {
+    font-size: 12px;
+  }
+  
+  .type-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .type-btn {
+    padding: 8px 4px;
+    font-size: 9px;
+  }
+  
+  .msg-body {
+    max-width: 85%;
+  }
+  
+  .welcome-title {
+    font-size: 16px;
+  }
+  
+  .welcome-sub {
+    font-size: 10px;
+    max-width: 320px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+
+/* Mobile Landscape & Small Tablet (600px - 768px) */
+@media (max-width: 768px) {
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-rows: 56px 1fr auto;
+    grid-template-areas: 
+      "topbar"
+      "main"
+      "sidebar";
+  }
+  
+  #topbar {
+    grid-area: topbar;
+    padding: 0 12px;
+  }
+  
+  #main {
+    grid-area: main;
+    min-height: calc(100vh - 56px - 180px);
+  }
+  
+  #sidebar {
+    grid-area: sidebar;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    max-height: 180px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  
+  #right-panel {
+    display: none;
+  }
+  
+  .brand-name {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+  
+  .model-badge {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+  
+  .sidebar-block {
+    padding: 10px;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+  
+  .sidebar-block:last-child {
+    border-right: none;
+  }
+  
+  .sidebar-block:nth-child(3) {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--border);
+    border-right: none;
+    padding-top: 12px;
+  }
+  
+  .type-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  
+  .type-btn {
+    padding: 6px 2px;
+    font-size: 8px;
+  }
+  
+  .quick-list {
+    gap: 2px;
+  }
+  
+  .quick-item {
+    padding: 5px 8px;
+    font-size: 9px;
+  }
+  
+  .history-scroll {
+    max-height: 120px;
+    padding: 8px;
+  }
+  
+  .history-entry {
+    padding: 5px 6px;
+    margin-bottom: 2px;
+  }
+  
+  .history-type-tag {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+  
+  .history-text {
+    font-size: 9px;
+  }
+  
+  #chat-window {
+    padding: 15px 18px;
+  }
+  
+  .msg-body {
+    max-width: 90%;
+  }
+  
+  .bubble {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  
+  .calc-result {
+    font-size: 18px;
+  }
+  
+  .result-card-body {
+    padding: 10px;
+  }
+  
+  .r-row {
+    font-size: 10px;
+  }
+  
+  #input-zone {
+    padding: 12px 18px 15px;
+  }
+  
+  .input-row {
+    padding: 8px 12px;
+  }
+  
+  #msg-input {
+    font-size: 11px;
+  }
+  
+  #send-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Mobile Portrait (up to 600px) */
+@media (max-width: 600px) {
+  #app {
+    grid-template-rows: 48px 1fr auto;
+  }
+  
+  #topbar {
+    padding: 0 10px;
+    height: 48px;
+  }
+  
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .brand-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .brand-name {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  
+  .status-pill {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+  
+  .topbar-center, .topbar-right {
+    font-size: 9px;
+  }
+  
+  .model-badge {
+    display: none;
+  }
+  
+  #main {
+    min-height: calc(100vh - 48px - 200px);
+  }
+  
+  #sidebar {
+    max-height: 200px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  
+  .sidebar-block {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .sidebar-block:nth-child(3) {
+    border-top: none;
+  }
+  
+  .type-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .type-btn {
+    padding: 5px 2px;
+    font-size: 7px;
+  }
+  
+  .t-icon {
+    font-size: 14px;
+  }
+  
+  .quick-item {
+    font-size: 8px;
+    padding: 4px 6px;
+  }
+  
+  #chat-window {
+    padding: 12px 15px;
+    gap: 12px;
+  }
+  
+  .welcome-ring {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .welcome-ring-inner {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+  
+  .welcome-title {
+    font-size: 14px;
+  }
+  
+  .welcome-sub {
+    font-size: 9px;
+    max-width: 280px;
+    padding: 0 10px;
+  }
+  
+  .welcome-tag {
+    font-size: 8px;
+    padding: 3px 8px;
+  }
+  
+  .msg {
+    gap: 8px;
+  }
+  
+  .msg-avatar {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+  
+  .msg-meta {
+    font-size: 8px;
+  }
+  
+  .type-tag {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+  
+  .priority-badge {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+  
+  .msg-body {
+    max-width: 95%;
+  }
+  
+  .bubble {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  
+  .result-card-header {
+    padding: 6px 10px;
+    font-size: 8px;
+  }
+  
+  .calc-result {
+    font-size: 16px;
+  }
+  
+  .r-key {
+    min-width: 60px;
+    font-size: 9px;
+  }
+  
+  .insight-item, .search-result-item {
+    font-size: 10px;
+  }
+  
+  .step-pill {
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+  
+  .typing-bubble {
+    padding: 10px 12px;
+  }
+  
+  .typing-status {
+    font-size: 9px;
+  }
+  
+  #input-zone {
+    padding: 10px 15px 12px;
+  }
+  
+  .input-row {
+    padding: 6px 10px;
+  }
+  
+  .input-prompt {
+    font-size: 13px;
+  }
+  
+  #msg-input {
+    font-size: 10px;
+  }
+  
+  #send-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .input-hints {
+    font-size: 8px;
+  }
+  
+  .input-hints kbd {
+    font-size: 7px;
+  }
+}
+
+/* Very Small Mobile (up to 400px) */
+@media (max-width: 400px) {
+  .brand-name {
+    font-size: 9px;
+  }
+  
+  .topbar-center {
+    display: none;
+  }
+  
+  .type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .type-btn {
+    font-size: 6px;
+  }
+  
+  .t-icon {
+    font-size: 12px;
+  }
+  
+  .quick-item {
+    font-size: 7px;
+  }
+  
+  .welcome-title {
+    font-size: 13px;
+  }
+  
+  .welcome-sub {
+    font-size: 8px;
+  }
+  
+  .msg-avatar {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .msg-body {
+    max-width: 100%;
+  }
+  
+  .msg-meta {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+
+/* Fix for very tall screens */
+@media (min-height: 900px) {
+  #sidebar {
+    max-height: 220px;
+  }
+}
+
+/* Fix for very short screens */
+@media (max-height: 600px) {
+  #sidebar {
+    max-height: 150px;
+  }
+  
+  .history-scroll {
+    max-height: 80px;
+  }
+  
+  #chat-window {
+    padding: 10px 15px;
+  }
+  
+  .welcome {
+    padding: 20px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .type-btn, .quick-item, #send-btn, .panel-nav-btn {
+    min-height: 44px;
+  }
+  
+  .type-btn {
+    padding: 12px 6px;
+  }
+  
+  .quick-item {
+    padding: 12px 10px;
+  }
+  
+  #send-btn {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .history-entry {
+    padding: 12px 8px;
+  }
+  
+  /* Larger tap targets */
+  input, textarea, button {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+}
+
 </style>
 </head>
 <body>
